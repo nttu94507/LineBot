@@ -18,8 +18,8 @@
 
 require_once('./LINEBotTiny.php');
 
-$channelAccessToken = '<your channel access token>';
-$channelSecret = '<your channel secret>';
+$channelAccessToken = 'r6RjYZeB1s1O0OsjbNzdLp/50ozOJb5Jrcp5/X9oVzNcoYhwHqOX8u/AwzzETmLl/VJ3Rp4QBMNpCwyS0+yQmr1GPSum1CW8+XttiJacBrQ7mrdZtxHD2H4D/gG2rjye0+nusyAOJBpGFaJywwGetQdB04t89/1O/w1cDnyilFU=';
+$channelSecret = 'f2effb509033986d95f16bf0da16eba8';
 
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 foreach ($client->parseEvents() as $event) {
@@ -33,7 +33,55 @@ foreach ($client->parseEvents() as $event) {
                         'messages' => [
                             [
                                 'type' => 'text',
-                                'text' => $message['text']
+                                'text' => $message['text'].'FQ'
+                            ]
+                        ]
+                    ]);
+                    break;
+
+                case 'image':
+                    $client->replyMessage([
+                        'replyToken' => $event['replyToken'],
+                        'messages' => [
+                            [
+                                'type' => 'text',
+                                'text' => 'FQ'
+                            ]
+                        ]
+                    ]);
+                    break;
+
+                case 'video':
+                    $client->replyMessage([
+                        'replyToken' => $event['replyToken'],
+                        'messages' => [
+                            [
+                                'type' => 'text',
+                                'text' => 'FQ'
+                            ]
+                        ]
+                    ]);
+                    break;
+
+                case 'audio':
+                    $client->replyMessage([
+                        'replyToken' => $event['replyToken'],
+                        'messages' => [
+                            [
+                                'type' => 'text',
+                                'text' => 'FQ'
+                            ]
+                        ]
+                    ]);
+                    break;
+
+                case 'sticker':
+                    $client->replyMessage([
+                        'replyToken' => $event['replyToken'],
+                        'messages' => [
+                            [
+                                'type' => 'text',
+                                'text' => 'FQ'
                             ]
                         ]
                     ]);
